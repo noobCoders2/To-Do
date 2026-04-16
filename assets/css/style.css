@@ -1,0 +1,189 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.container{
+    margin: 20px;
+    background: linear-gradient(to top, rgb(44, 44, 199), rgb(35, 184, 97), rgb(226, 226, 12));
+    border-radius: 10px;
+    max-width: 700px;
+}
+h1{
+    color: #220e69;
+    text-align: center;
+    padding-top: 20px;
+}
+label{
+    font-weight: bold;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 10px;
+}
+.input_container{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.input_container .inputs{
+    width: 100%;
+    background-color: #ffff;
+    padding: 10px;
+    border-radius: 10px;
+}
+.inputs input{
+    width: 100%;
+    padding: 7px;
+    outline: none;
+    border: 1px solid #888585;
+    margin: 2px 0;
+}
+.inputs textarea{
+    width: 100%;
+    height: 150px;
+    margin: 2px 0;
+    resize: none;
+    padding-bottom: 10px;
+    outline: none;
+    padding-left: 3px;
+}
+.container button{
+    background-color: rgb(39, 39, 236);
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    color: #ffff;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: .3s;
+    width: 100px;
+}
+.container button:active{
+    transform: scale(0.9);
+    background-color: rgb(15, 15, 206);
+}
+.todo_list_container{
+    border: 1px solid #888585;
+    border-radius: 10px;
+    margin: 20px 0;
+    background-color: #fff;
+    padding: 10px;
+}
+.todo_list_container button{
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: .3s;
+}
+.todo_list_container button:first-child{
+    background-color: rgb(202, 11, 11);
+    
+}
+.todo_list_container button:last-child{
+    background-color: rgb(7, 179, 7);
+}
+.todo_list_container button:first-child:active,
+.todo_list_container button:last-child:active{
+    transform: scale(0.9);
+}
+
+/* modal */
+.modal_container{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(8px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.modal_container.active{
+    opacity: 1;
+    pointer-events: all;
+}
+.modal{
+    background: linear-gradient(180deg, #1e3a8a 0%, #1e40af 100%);
+    width: 500px;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transform: scale(0.7) translateY(-30px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.modal_container.active .modal {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+.modal form{
+    width: 100%;
+    padding: 10px;
+}
+.modal form button{
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    align-items: center;
+    transition: all 0.2s;
+}
+.modal input,
+.modal textarea{
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgb(20, 19, 19);
+}
+
+.modal input:focus,
+.modal textarea:focus{
+    border-color: #38bdf8;
+}
+.modal form .modal_save_btn{
+    background: linear-gradient(180deg, #062a8d 0%, #056e5d 100%);
+}
+.modal form .modal_close_btn{
+    background: rgb(197, 13, 13);
+}
+.modal form .modal_save_btn:active,
+.modal form .modal_close_btn:active{
+    transform: scale(0.9);
+}
+.modal_header{
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.modal_header p{
+    color: #16a34a;
+    background: rgba(34, 197, 94, 0.2);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+.modal_header .Modalheader h2{
+    color: #fff;
+}
